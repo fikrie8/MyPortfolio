@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import unimapLogo from '../../../assets/logo/unimap.png';
-import psis from '../../../assets/logo/psis.png';
+import psis from '../../../assets/logo/PSIS.png';
 
 const EducationItem = ({ edu, index }) => {
   const [imageError, setImageError] = useState(false);
