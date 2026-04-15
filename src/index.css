@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Modern Tailwind v4 variant for manual toggling */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Optional: Ensure smooth transitions globally */
+html {
+  transition: background-color 0.5s ease;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
