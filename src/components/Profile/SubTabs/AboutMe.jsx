@@ -12,7 +12,7 @@ const AboutMe = () => {
     <div className="space-y-6">
       {/* Intro Text */}
       <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
-        I am a <span className="text-blue-600 dark:text-blue-400 font-bold">Fullstack Developer</span> with 
+        I am a <span className="text-blue-600 dark:text-blue-400 font-bold">Fullstack Software Engineer</span> with 
         a professional background in <span className="font-semibold text-slate-900 dark:text-white">Engineering</span>. 
         I don't just write code; I build systems. My approach combines the precision of engineering with 
         modern web technologies to deliver high-performance, scalable solutions.

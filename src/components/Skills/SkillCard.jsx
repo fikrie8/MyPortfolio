@@ -30,11 +30,11 @@ const SkillCard = ({ name, icon, score, color }) => {
       </h5>
 
       {/* 5-SLAT PROGRESS BAR */}
-      <div className="flex gap-1.5 w-full px-2 mt-auto">
+      <div className="flex gap-1.5 w-full px-1 mt-auto">
         {[1, 2, 3, 4, 5].map((step) => (
           <div 
             key={step}
-            className={`h-1.5 flex-1 min-w-[4px] rounded-full transition-all duration-700 ${
+            className={`h-1.5 flex-1 rounded-full transition-all duration-700 ${
               step <= score 
                 ? 'bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,0.4)]' 
                 : 'bg-slate-100 dark:bg-slate-700'

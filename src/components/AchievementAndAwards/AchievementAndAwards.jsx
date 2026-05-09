@@ -34,7 +34,7 @@ const AchievementAndAwards = () => {
           transition={{ delay: index * 0.1 }}
           className={`p-8 rounded-[2.5rem] border ${item.color} transition-all hover:scale-[1.02] duration-300`}
         >
-          <div className="flex items-start gap-6">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6 text-center sm:text-left">
             {/* Icon "Trophy" Circle */}
             <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 shadow-sm text-3xl shrink-0">
               {item.icon}

@@ -25,7 +25,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto py-12 px-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto py-12 px-4">
       {projectList.map((project, index) => (
         <motion.div
           key={index}
@@ -36,11 +36,10 @@ const Projects = () => {
           className="group relative bg-white dark:bg-slate-800/40 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col"
         >
           {/* Project Preview Image */}
-          <div className="relative h-56 overflow-hidden">
+          <div className="relative aspect-video sm:h-48 h-56 overflow-hidden">
             <img 
-              src={project.image} 
-              alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src={project.image}            
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => { e.target.src = "https://placeholder.com"; }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
@@ -51,8 +50,8 @@ const Projects = () => {
           </div>
 
           {/* Content Body */}
-          <div className="p-8 flex flex-col flex-1">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
+          <div className=" p-6 sm:p-8 flex flex-col flex-1">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors leading-tight pr-2">
               {project.title}
             </h3>
             
@@ -61,21 +60,21 @@ const Projects = () => {
             </p>
 
             {/* Technical Tags */}
-            <div className="flex flex-wrap gap-2 mt-auto">
+            <div className="flex flex-wrap gap-2 mt-auto mb-8">
               {project.tech.map((tag, i) => (
-                <span key={i} className="flex items-center gap-1.5 px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 text-[10px] font-bold rounded-lg border border-transparent group-hover:border-slate-200 dark:group-hover:border-slate-600 transition-all">
+                <span key={i} className="flex items-center gap-1.5 px-2 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 sm:text-[10px] font-bold rounded-lg border border-transparent group-hover:border-slate-200 dark:group-hover:border-slate-600 transition-all">
                   <FiCode className="text-blue-500" /> {tag}
                 </span>
               ))}
             </div>
 
             {/* Action Links */}
-            <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-700 flex gap-4">
+            <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-700 flex flex-col sm:flex-row gap-3">
               <a 
                 href={project.github} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex-1 py-3 px-4 rounded-xl bg-slate-900 dark:bg-slate-700 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-blue-600 transition-colors"
+                className="flex-1 py-3 px-4 rounded-xl bg-slate-900 dark:bg-slate-700 text-white text-xs font-bold flex items-center justify-center gap-2 hover:bg-blue-600 active:scale-95 transition-transform"
               >
                 <FiGithub /> Source Code
               </a>

@@ -16,7 +16,7 @@ const EducationItem = ({ edu, index }) => {
       {/* Timeline Dot */}
       <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 border-4 border-slate-50 dark:border-slate-950" />
 
-      <div className="flex flex-col sm:flex-row gap-5 items-start">
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-10 items-start">
         
         {/* Emblem Container */}
         <div className={`w-16 h-16 shrink-0 flex items-center justify-center rounded-xl transition-all duration-300 ${
@@ -82,7 +82,7 @@ const Education = () => {
   ];
 
   return (
-    <div className="space-y-10 py-4">
+    <div className="py-4 pl-2">
       {educationData.map((edu, index) => (
         <EducationItem key={index} edu={edu} index={index} />
       ))}

@@ -19,56 +19,50 @@ const MainPage = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-500 font-sans selection:bg-blue-200">
-      <div className="max-w-5xl mx-auto px-6 py-12">
-        
-        {/* Navigation / Header */}
-        <header className="flex justify-between items-start mb-16">
-            <div className="space-y-1">
-                <h1 className="text-5xl font-black tracking-tight text-slate-900 dark:text-white">
-                {/* Types immediately */}
-                    <TypeWriterText 
-                        text="Mohd Fikrie bin Muthafa" 
-                    />
+      <div className="max-w-5xl mx-auto">
+        <main className="px-4 sm:px-8 md:px-12 py-10 md:py-20">
+
+          {/* Navigation / Header */}
+          <header className="flex flex-col sm:flex-row justify-between items-start mb-10 md:mb-16 gap-6">
+              <div className="space-y-1">
+                {/* Responsive Font: 3xl on mobile, 5xl on desktop */}
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
+                  <TypeWriterText text="Mohd Fikrie bin Muthafa" />
                 </h1>
-            <p className="text-lg font-medium text-blue-600 dark:text-blue-400 uppercase tracking-widest">
-            {/* Types after a 1.2 second delay */}
-                <TypeWriterText 
-                    text="Fullstack Developer" 
-                    delay={1.2} 
-                />
-            </p>
-        </div>
+          
+                {/* Responsive Text: text-sm on mobile, text-lg on desktop */}
+                <p className="text-sm sm:text-base md:text-lg font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">
+                  <TypeWriterText text="Fullstack Software Engineer" delay={1.2} />
+                </p>
+              </div>
 
         <DarkModeToggle isDark={isDark} toggleTheme={toggleTheme} />
         </header>
 
         {/* Tab List */}
-        <div className="flex flex-nowrap overflow-x-auto no-scrollbar justify-center w-full rounded-full mb-12 gap-1 mb-10 bg-gray-100/50 dark:bg-slate-900/50 p=1.5">
-          {TABS.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`relative px-6 py-2.5 text-sm font-bold rounded-xl transition-all duration-300 ${
-                activeTab === tab 
-                  ? 'text-white' 
-                  : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
-              }`}
+        <div className="w-full mb-8 md:mb-12 px-4">
+          <div className="flex w-full mb-8 md:mb-12 overflow-x-auto no-scrollbar pb-2">
+            <nav className="flex p-1 bg-slate-100/50 dark:bg-slate-800/50 backdrop-blur-md rounded-full border border-slate-200/50 dark:border-slate-700/50 min-w-max mx-auto">
+              {TABS.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  /* Added whitespace-nowrap so text doesn't wrap to 2 lines */
+                  className={`px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer relative whitespace-nowrap ${
+                    activeTab === tab ? 'text-blue-600' : 'text-slate-500'
+                  }`}
             >
-              <span className="relative z-10">{tab}</span>
-              {activeTab === tab && (
-                <motion.div 
-                  layoutId="active-pill"
-                  className="absolute inset-0 bg-blue-600 dark:bg-blue-500 rounded-xl shadow-lg shadow-blue-500/30"
-                  transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                />
-              )}
-            </button>
-          ))}
+                  <span className="relative z-10">{tab}</span>
+                  {activeTab === tab && (
+                  <motion.div layoutId="activeTabPill" className="absolute inset-0 bg-white dark:bg-slate-700 shadow-sm rounded-full" />
+                  )}
+                </button>
+              ))}
+            </nav>
+          </div>
         </div>
-
-        {/* Content Section */}
-        <main className="relative min-h-[450px]">
-          <AnimatePresence mode="wait">
+        
+        <AnimatePresence mode="wait">
             <motion.section
               key={activeTab}
               initial={{ opacity: 0, y: 15 }}

@@ -17,7 +17,6 @@ const Experience = () => {
         {type: 'spacer' },
         {type: 'header', text: "Inventory Management" },
         {type: 'desc', text: "digitalize how equipment and items are stored, borrowed or bought into and out of their warehouse"},
-        {type: 'dec', text: "" },
         ],
     jobScope: [
         "Create e-commerce website for client to display their item and services",

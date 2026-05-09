@@ -37,13 +37,13 @@ const References = () => {
             transition={{ delay: index * 0.1 }}
             className="p-8 bg-white dark:bg-slate-800/40 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 shadow-sm group hover:shadow-xl transition-all duration-500"
           >
-            <div className="flex items-start gap-5">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5">
               {/* Profile Avatar Placeholder */}
               <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 text-2xl shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                 <FiUser />
               </div>
 
-              <div className="flex-1 space-y-1">
+              <div className="flex-1 space-y-1 w-full">
                 <span className="text-[10px] font-black uppercase tracking-widest text-blue-600 dark:text-blue-400">
                   {ref.relation}
                 </span>

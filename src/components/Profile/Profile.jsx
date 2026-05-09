@@ -26,14 +26,14 @@ const Profile = () => {
         <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800">
           <img 
             src={ProfileImg}
-            alt="Mohd Fikrie"
+            alt="Mohd Fikrie bin Muthafa"
             className="w-full h-auto object-cover aspect-[2/3]" 
           />
         </div>
       </motion.div>
 
       {/* RIGHT: Vertical Accordion List */}
-      <div className="flex-1 space-y-4">
+      <div className="w-full md:flex-1 space-y-4">
         {sections.map((section) => (
           <div 
             key={section.id}
@@ -69,7 +69,7 @@ const Profile = () => {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="py-4 px-2">
+                  <div className="px-0 sm:px-4 pb-6 pt-2">
                     {section.component}
                   </div>
                 </motion.div>

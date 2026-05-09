@@ -51,27 +51,30 @@ const Training = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1 }}
-          className="group relative p-6 bg-white dark:bg-slate-800/40 rounded-3xl border border-slate-100 dark:border-slate-700 hover:border-blue-500/50 transition-all duration-300 shadow-sm"
+          className="group relative p-5 sm:p-6 bg-white dark:bg-slate-800/40 rounded-3xl border border-slate-100 dark:border-slate-700 hover:border-blue-500/50 transition-all duration-300 shadow-sm"
         >
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="flex items-start gap-4">
               {/* Icon */}
-              <div className="p-3 rounded-2xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">
+              <div className="p-3 rounded-2xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 shrink-0">
                 <FiBookOpen size={20} />
               </div>
 
-              <div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
-                  {item.provider}
-                </p>
+              <div className="flex-1 min-w-0 overflow-x-auto no-scrollbar pr-2">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors pr-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 font-medium pr-4">
+                    {item.provider}
+                  </p>
+                </div>
               </div>
+              
             </div>
 
             {/* Metadata (Year & Duration) */}
-            <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-slate-400 border-t md:border-t-0 pt-4 md:pt-0 border-slate-100 dark:border-slate-800">
+            <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-slate-400 border-t ml-14 md:ml-0 md:border-t-0 pt-4 md:pt-0 border-slate-100 dark:border-slate-800">
               <div className="flex items-center gap-1.5">
                 <FiCalendar className="text-blue-500" />
                 <span>{item.year}</span>
